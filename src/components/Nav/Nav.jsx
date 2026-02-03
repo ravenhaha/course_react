@@ -1,3 +1,5 @@
+import styles from './Nav.module.css';
+
 function Nav (props) {
 
     const navLinks = [
@@ -11,7 +13,7 @@ function Nav (props) {
             <ul>
                 {navLinks.map((link, index) => (
                     <li key={index}>
-                        <a href={link.path}>{link.name}</a>
+                        <a href={link.path} className={styles.link}>{link.name}</a>
                     </li>
                 ))}
             </ul>

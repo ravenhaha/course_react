@@ -51,14 +51,4 @@ npm run format         # форматирование Prettier
 npm run storybook      # запуск Storybook на порту 6006
 ```
 
-## Деплой
 
-Проект автоматически деплоится на GitHub Pages при пуше в ветку `main`.
-
-Перед первым деплоем нужно добавить секрет в репозитории:
-`Settings → Secrets and variables → Actions → New repository secret`
-
-- **Name:** `VITE_KINOPOISK_API_KEY`
-- **Value:** твой ключ от Kinopoisk API
-
-Сайт: [ravenhaha.github.io/course_react](https://ravenhaha.github.io/course_react)

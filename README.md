@@ -1,16 +1,64 @@
-# React + Vite
+# CineTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение для поиска и отслеживания фильмов на основе Kinopoisk Unofficial API.
 
-Currently, two official plugins are available:
+## Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** — компоненты, состояние, жизненный цикл, события
+- **React Router v7** — маршрутизация, параметры роута, активные ссылки
+- **Redux Toolkit** — глобальный стейт, сохранение в localStorage
+- **Material UI v7** — UI компоненты и иконки
+- **Axios** — запросы к API
+- **React Hook Form** — обработка форм
+- **Storybook 10** — UI-kit
+- **ESLint + Prettier** — линтинг и форматирование
 
-## React Compiler
+## Страницы
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+| Путь | Страница |
+|---|---|
+| `/` | Главная — тренды и популярные фильмы |
+| `/search` | Поиск по названию, жанру и году |
+| `/movie/:id` | Детальная страница фильма |
+| `/watchlist` | Личный вишлист |
+| `/profile` | Профиль пользователя |
 
-## Expanding the ESLint configuration
+## Запуск
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+Создай файл `.env` в корне проекта:
+
+```
+VITE_KINOPOISK_API_KEY=твой_ключ
+```
+
+Получить ключ можно бесплатно на [kinopoiskapiunofficial.tech](https://kinopoiskapiunofficial.tech).
+
+```bash
+npm run dev
+```
+
+## Команды
+
+```bash
+npm run dev            # запуск dev сервера
+npm run build          # сборка
+npm run lint           # проверка ESLint
+npm run format         # форматирование Prettier
+npm run storybook      # запуск Storybook на порту 6006
+```
+
+## Деплой
+
+Проект автоматически деплоится на GitHub Pages при пуше в ветку `main`.
+
+Перед первым деплоем нужно добавить секрет в репозитории:
+`Settings → Secrets and variables → Actions → New repository secret`
+
+- **Name:** `VITE_KINOPOISK_API_KEY`
+- **Value:** твой ключ от Kinopoisk API
+
+Сайт: [ravenhaha.github.io/course_react](https://ravenhaha.github.io/course_react)

@@ -1,0 +1,53 @@
+.backdrop {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  margin-bottom: -120px;
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.4), #141414);
+}
+
+.hero {
+  display: flex;
+  gap: 32px;
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.posterWrap {
+  flex-shrink: 0;
+}
+
+.poster {
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+.info {
+  flex: 1;
+  padding-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 24px;
+  }
+
+  .backdrop {
+    height: 220px;
+    margin-bottom: -60px;
+  }
+}
